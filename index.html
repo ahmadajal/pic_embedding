@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Ahmad</title>
+</head>
+<body>
+  <div>
+    <img id="img_left" src=""/>
+    <button  onclick="create_log('img_left')">Click Left</button>
+  </div>
+  <div>
+    <img id="img_right" src="" />
+  <button onclick="create_log('img_right')">Click Right</button>
+  </div>
+  <div>
+    <img id="img_ref" src="" />
+  </div>
+  <div>
+    <button onclick="changepic('img_left');changepic('img_right');changepic('img_ref'); "> new set </button>
+  </div>
+
+<textarea id="log">
+</textarea>
+<script src = "id2dir.js"></script>
+<script src = "dir2id.js"></script>
+<script>
+let ids = Object.keys(id2dir)
+function randomItemFrom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+function create_log(id) {
+  document.getElementById("log").innerHTML += dir2id[document.getElementById("img_left").getAttribute("src")] + ' ,'
+  document.getElementById("log").innerHTML += dir2id[document.getElementById("img_right").getAttribute("src")] + ' ,'
+  document.getElementById("log").innerHTML += dir2id[document.getElementById("img_ref").getAttribute("src")] + ' ,'
+  document.getElementById("log").innerHTML += dir2id[document.getElementById(id).getAttribute("src")] + '\n'
+}
+
+function changepic(id) {
+    // document.getElementById(id).src = "../Downloads/lfw/German_Khan/German_Khan_0001.jpg";
+    document.getElementById(id).src = id2dir[randomItemFrom(ids)]
+}
+changepic("img_left")
+changepic("img_right")
+changepic("img_ref")
+console.log(document.getElementById("img_left").getAttribute("src"))
+</script>
+</body>
+</html>
