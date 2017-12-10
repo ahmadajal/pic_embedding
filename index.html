@@ -1,24 +1,50 @@
 <html>
 <head>
-  <title>Ahmad</title>
+  <title>comparison search project</title>
 </head>
+<style>
+#new_set{
+  margin: 2% auto 0 auto;
+  text-align:center;
+}
+#main {
+    margin: 5% auto 0 auto;
+    text-align:center;
+}
+#ref {
+    margin: 8% auto 0 auto;
+    text-align:center;
+}
+/*img:hover {
+    cursor: pointer;
+}*/
+</style>
 <body>
-  <div>
-    <img id="img_left" src=""/>
-    <button  onclick="create_log('img_left')">Click Left</button>
-  </div>
-  <div>
-    <img id="img_right" src="" />
-  <button onclick="create_log('img_right')">Click Right</button>
-  </div>
-  <div>
-    <img id="img_ref" src="" />
-  </div>
-  <div>
+  <h1 style="text-align: center;"> comparison search project</h1>
+  <h3 style="text-align: center;"> Which of the two images below is more similar to the image at the bottom? </h3>
+  <h4 style="text-align: center;"> (by clicking on one of the images your result will be generated and a new set will be shown to you)</h4>
+  <h4 style="text-align: center;"> If you are not sure about the current set just click on newset button to see a new one</h4>
+  <div id="new_set">
     <button onclick="changepic('img_left');changepic('img_right');changepic('img_ref'); "> new set </button>
   </div>
+  <div id="main" method="post">
+    <img id="img_left"; style="cursor: pointer;"; align="middle" ; onclick="create_log('img_left');changepic('img_left');changepic('img_right');changepic('img_ref');" ;src=""> </img>
+    <!-- <button  onclick="create_log('img_left')";style="background-color: #00FFFF">Export</button> -->
+    <img id="img_right" ; style="cursor: pointer;"; align="middle" ; onclick="create_log('img_right');changepic('img_left');changepic('img_right');changepic('img_ref');"; src=""> </img>
+    <!-- <button onclick="create_log('img_right')">select</button> -->
+  </div>
+  <div id="ref" method="post">
+    <img id="img_ref" ; align="middle" ; src="" > </img>
+  </div>
+  <!-- <div>
+    <img id="img_right" src="" />
+  <button onclick="create_log('img_right')">Click Right</button>
+  </div> -->
+  <!-- <div>
+    <img id="img_ref" src="" />
+  </div> -->
 
-<textarea id="log">
+<textarea id="log"; align="center">
 </textarea>
 <script src = "id2dir.js"></script>
 <script src = "dir2id.js"></script>
